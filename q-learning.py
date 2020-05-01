@@ -13,8 +13,6 @@ gamma = 0.75
 alpha = 0.9
 
 
-# PART 1 - DEFINING THE ENVIRONMENT
-
 
 # States
 location_to_state = {'A': 0,
@@ -51,10 +49,6 @@ R = np.array([[0,1,0,0,0,0,0,0,0,0,0,0],
               [0,0,0,0,0,0,0,1,0,0,1,0]])
 
 
-
-
-
-# PART 3 - GOING INTO PRODUCTION
 
 
 
@@ -99,35 +93,10 @@ def route(starting_location, ending_location):
 def best_route(starting_location, middle_location, ending_location):
     
     one = route(starting_location,middle_location)
-    
     two = route(middle_location,ending_location)
-    print(two)
-    return one
+   
+    return one + two[1:]
 
+print('Route:')
 best_route('E', 'K', 'G')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
